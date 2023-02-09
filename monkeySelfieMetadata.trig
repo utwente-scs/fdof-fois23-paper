@@ -1,0 +1,108 @@
+@prefix : <https://w3id.org/fdof/fois23-paper/ex3/> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix fdof: <https://w3id.org/fdof/ontology#> .
+@prefix fdoft: <https://w3id.org/fdof/types#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/>
+
+{
+    :monkeySelfie rdf:type fdof:FAIRInformationObject ;
+                    fdof:hasInformationObjectType fdoft:Photograph ;
+                    fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfie"^^xsd:anyURI ;
+                    fdof:isMaterializedBy :monkeySelfieJpeg, :monkeySelfieSmallJpeg .
+
+    :monkeySelfieJpeg rdf:type fdof:FAIRMediaObject ;
+                        fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/image/jpeg> ;
+                        fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieJpeg"^^xsd:anyURI .
+    
+    :monkeySelfieSmallJpeg rdf:type fdof:FAIRMediaObject ;
+                           fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/image/jpeg> ;
+                           fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieSmallJpeg"^^xsd:anyURI .
+                        
+    :monkeySelfieMetadataTrig rdf:type fdof:FAIRMediaObject ;
+                              fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
+                              fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadataTrig"^^xsd:anyURI ;
+
+    :monkeySelfieMetadata rdf:type fdof:FAIRMetadataRecord ;
+                          fdof:hasInformationObjectType fdoft:PhotographMetadataRecord ;
+                          fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadata"^^xsd:anyURI ;
+                          fdof:isMetadataOf :monkeySelfie ;
+                          fdof:isMaterializedBy :monkeySelfieMetadataTrig .
+
+    :monkeySelfieJpegMetadata rdf:type fdof:FAIRMetadataRecord ;
+                              fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
+                              fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieJpegMetadata" ;
+                              fdof:isMetadataOf :monkeySelfieJpeg ; 
+                              fdof:isMaterializedBy :monkeySelfieMetadataTrig .
+
+    :monkeySelfieSmallJpegMetadata rdf:type fdof:FAIRMetadataRecord ;
+                                    fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
+                                    fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieJpegMetadata" ;
+                                    fdof:isMetadataOf :monkeySelfieSmallJpeg ; 
+                                    fdof:isMaterializedBy :monkeySelfieMetadataTrig .
+
+    :monkeySelfieMetadataTrigMetadata rdf:type fdof:FAIRMetadataRecord ;
+                                      fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
+                                      fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadataTrigMetadata" ;
+                                      fdof:isMetadataOf :monkeySelfieMetadataTrig ; 
+                                      fdof:isMaterializedBy :monkeySelfieMetadataTrig .
+}
+    
+:monkeySelfieMetadata {
+  :monkeySelfieMetadata fdof:isMetadataOf :monkeySelfie .
+  
+  :monkeySelfie rdf:type fdof:FAIRInformationObject, schema:Photograph ;
+                fdof:hasInformationObjectType fdoft:Photograph ;
+                fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfie"^^xsd:anyURI ;
+                schema:identifier "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfie"^^xsd:anyURI ;
+                fdof:isMaterializedBy :monkeySelfieJpeg ;
+                schema:encoding :monkeySelfieJpeg ;
+                schema:name "Macaca nigra self-portrait"@en ;
+                schema:description "Portrait of a female Macaca nigra (Celebes crested macaque) in North Sulawesi, Indonesia, who triggered photographer David Slater's camera"@en ;
+                schema:dateCreated "2011-07-04"^^xsd:date ;
+                schema:creditText "Self-portrait by the depicted Macaca nigra female"@en
+                schema:license <https://en.wikipedia.org/wiki/Public_domain> ;
+}
+
+:monkeySelfieJpegMetadata {
+  :monkeySelfieJpegMetadata fdof:isMetadataOf :monkeySelfieJpeg .
+
+  :monkeySelfieJpeg rdf:type schema:ImageObject, fdof:FAIRMediaObject ;
+                    fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/image/jpeg> ;
+                    schema:encodingFormat <https://www.iana.org/assignments/media-types/image/jpeg> ;
+                    fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieJpeg" ;
+                    schema:name "Jpeg with the macaca nigra self-portrait (original size)"@en ;
+                    schema:width "2912"^^xsd:int ;
+                    schema:height "4030"^^xsd:int ;
+                    schema:contentSize "1.7 MB" ;
+                    schema:contentUrl <https://upload.wikimedia.org/wikipedia/commons/4/4e/Macaca_nigra_self-portrait_large.jpg> ;
+}
+
+:monkeySelfieSmallJpegMetadata {
+  :monkeySelfieSmallJpegMetadata fdof:isMetadataOf :monkeySelfieSmallJpeg .
+
+  :monkeySelfieSmallJpeg rdf:type schema:ImageObject, fdof:FAIRMediaObject ;
+                          fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/image/jpeg> ;
+                          schema:encodingFormat <https://www.iana.org/assignments/media-types/image/jpeg> ;
+                          fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieJpeg" ;
+                          schema:name "Jpeg with the macaca nigra self-portrait (reduced size)"@en ;
+                          schema:width "347"^^xsd:int ;
+                          schema:height "480"^^xsd:int ;
+                          schema:contentSize "57 KB" ;
+                          schema:contentUrl <https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Macaca_nigra_self-portrait_large.jpg/347px-Macaca_nigra_self-portrait_large.jpg> ;
+}
+
+:monkeySelfieMetadataTrigMetadata {
+  :monkeySelfieMetadataTrigMetadata fdof:isMetadataOf :monkeySelfieMetadataTrig .
+
+  :monkeySelfieMetadataTrig rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
+                            fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
+                            dcat:mediaType <https://www.iana.org/assignments/media-types/application/trig> ;
+                            fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadataTrig" ;
+                            dct:title "TriG Distribution of the Metadata Records Related to the Macaca nigra self-portrait photograph"@en ;
+                            dcat:byteSize "7038"^^xsd:int ;
+                            dcat:downloadURL <https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadataTrig> ;
+}
