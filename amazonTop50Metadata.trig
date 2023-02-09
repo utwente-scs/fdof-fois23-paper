@@ -1,4 +1,5 @@
 @prefix : <https://w3id.org/fdof/fois23-paper/ex1#> .
+@prefix ex1: <https://w3id.org/fdof/fois23-paper/ex1/> .
 @prefix fdof: <https://w3id.org/fdof/ontology#> .
 @prefix fdoft: <https://w3id.org/fdof/types#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -7,54 +8,54 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 {
-  :amazonTop50 rdf:type fdof:FAIRInformationObject ;
+  ex1:amazonTop50 rdf:type fdof:FAIRInformationObject ;
                fdof:hasInformationObjectType fdoft:Dataset ;
                fdof:gupri "https://w3id.org/fdof/fois23-paper/amazonTop50" ;
-               fdof:isMaterializedBy :amazonTop50Csv ;
+               fdof:isMaterializedBy ex1:amazonTop50Csv ;
     
   :amazonTop50Metadata rdf:type fdof:FAIRMetadataRecord ;
                        fdof:hasInformationObjectType fdoft:DatasetMetadataRecord ;
                        fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50Metadata" ;
-                       fdof:isMetadataOf :amazonTop50 ;
-                       fdof:isMaterializedBy :amazonTop50MetadataTrig .
+                       fdof:isMetadataOf ex1:amazonTop50 ;
+                       fdof:isMaterializedBy ex1:amazonTop50MetadataTrig .
   
   :amazonTop50MetaMetadata rdf:type fdof:FAIRMetadataRecord ;
                            fdof:hasInformationObjectType fdoft:MetaMetadataRecord ;
                            fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50MetaMetadata" ;
                            fdof:isMetadataOf :amazonTop50Metadata ; 
-                           fdof:isMaterializedBy :amazonTop50MetadataTrig .
+                           fdof:isMaterializedBy ex1:amazonTop50MetadataTrig .
 
   :amazonTop50CsvMetadata rdf:type fdof:FAIRMetadataRecord ;
                           fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
                           fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50CsvMetadata" ;
-                          fdof:isMetadataOf :amazonTop50Csv ; 
-                          fdof:isMaterializedBy :amazonTop50MetadataTrig .
+                          fdof:isMetadataOf ex1:amazonTop50Csv ; 
+                          fdof:isMaterializedBy ex1:amazonTop50MetadataTrig .
 
   :amazonTop50MetadataTrigMetadata rdf:type fdof:FAIRMetadataRecord ;
                              fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
                              fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50MetadataTrigMetadata" ;
-                             fdof:isMetadataOf :amazonTop50MetadataTrig ; 
-                             fdof:isMaterializedBy :amazonTop50MetadataTrig .
+                             fdof:isMetadataOf ex1:amazonTop50MetadataTrig ; 
+                             fdof:isMaterializedBy ex1:amazonTop50MetadataTrig .
 
-  :amazonTop50Csv rdf:type fdof:FAIRMediaObject ;
+  ex1:amazonTop50Csv rdf:type fdof:FAIRMediaObject ;
                   fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/text/csv> ;
                   fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1/amazonTop50Csv" ;
 
-  :amazonTop50MetadataTrig rdf:type fdof:FAIRMediaObject ;
-                     fdof:hasInformationObjectType <https://www.iana.org/assignments/media-types/application/trig> ;
+  ex1:amazonTop50MetadataTrig rdf:type fdof:FAIRMediaObject ;
+                     fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
                      fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50MetadataTrig" ;
 }
 
 :amazonTop50Metadata {
-  :amazonTop50Metadata fdof:isMetadataOf :amazonTop50 .
+  :amazonTop50Metadata fdof:isMetadataOf ex1:amazonTop50 .
   
-  :amazonTop50  rdf:type dcat:Dataset, fdof:FAIRInformationObject ;
-                fdof:hasInformationObjectType :Dataset ;
+  ex1:amazonTop50  rdf:type dcat:Dataset, fdof:FAIRInformationObject ;
+                fdof:hasInformationObjectType fdoft:Dataset ;
                 fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1/amazonTop50" ;
                 dct:identifier "https://w3id.org/fdof/fois23-paper/ex1/amazonTop50" ;
                 dct:identifier "http://doi.org/10.34740/kaggle/dsv/1556647" ;
-                fdof:isMaterializedBy :amazonTop50Csv ;
-                dcat:distribution :amazonTop50Csv ;
+                fdof:isMaterializedBy ex1:amazonTop50Csv ;
+                dcat:distribution ex1:amazonTop50Csv ;
                 dct:title "Amazon Top 50 Bestselling Books 2009 - 2019" ;
                 dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
                 dct:creator <https://www.kaggle.com/sootersaalu> ;
@@ -67,12 +68,12 @@
   :amazonTop50MetaMetadata fdof:isMetadataOf :amazonTop50Metadata .
   
   :amazonTop50Metadata rdf:type fdof:FAIRMetadataRecord ;
-                       fdof:hasInformationObjectType :DatasetMetadaRecord ;
-                       fdof:isMetadataOf :amazonTop50 ;
+                       fdof:hasInformationObjectType fdoft:DatasetMetadaRecord ;
+                       fdof:isMetadataOf ex1:amazonTop50 ;
                        fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50Metadata" ;
                        dct:identifier "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50Metadata" ;
-                       fdof:isMaterializedBy :amazonTop50MetadataTrig ;
-                       dct:distribution :amazonTop50MetadataTrig ;
+                       fdof:isMaterializedBy ex1:amazonTop50MetadataTrig ;
+                       dct:distribution ex1:amazonTop50MetadataTrig ;
                        dct:title "Metadata Record of the Amazon Top 50 Bestselling Books Dataset" ;
                        dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
                        dct:creator <https://orcid.org/0000-0002-5385-5761> ;
@@ -80,9 +81,9 @@
 }
 
 :amazonTop50CsvMetadata {
-  :amazonTop50CsvMetadata fdof:isMetadataOf :amazonTop50Csv .
+  :amazonTop50CsvMetadata fdof:isMetadataOf ex1:amazonTop50Csv .
 
-  :amazonTop50Csv rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
+  ex1:amazonTop50Csv rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
                   fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/text/csv> ;
                   dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
                   fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1/amazonTop50Csv" ;
@@ -92,9 +93,9 @@
 }
 
 :amazonTop50MetadataTrigMetadata {
-  :amazonTop50MetadataTrigMetadata fdof:isMetadataOf :amazonTop50MetadataTrig .
+  :amazonTop50MetadataTrigMetadata fdof:isMetadataOf ex1:amazonTop50MetadataTrig .
 
-  :amazonTop50MetadataTrig rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
+  ex1:amazonTop50MetadataTrig rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
                   fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
                   dcat:mediaType <https://www.iana.org/assignments/media-types/application/trig> ;
                   fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#amazonTop50MetadataTrig" ;
