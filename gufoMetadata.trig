@@ -1,0 +1,90 @@
+@prefix : <https://w3id.org/fdof/fois23-paper/ex2#> .
+@prefix ex2: <https://w3id.org/fdof/fois23-paper/ex2/> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix fdof: <https://w3id.org/fdof/ontology#> .
+@prefix fdoft: <https://w3id.org/fdof/types#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    <http://purl.org/nemo/gufo> rdf:type fdof:FAIRInformationObject ;
+                                fdof:hasInformationObjectType fdoft:Ontology ;
+                                fdof:gupri "http://purl.org/nemo/gufo"^^xsd:anyURI ;
+                                fdof:isMaterializedBy ex2:gufoTtl ;
+
+    ex2:gufoTtl rdf:type fdof:FAIRMediaObject ;
+                fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/text/turtle> ;
+                fdof:gupri "https://w3id.org/fdof/fois23-paper/ex2/gufoTtl"^^xsd:anyURI ;
+
+    ex2:gufoMetadataTrig rdf:type fdof:FAIRMediaObject ;
+                            fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
+                            fdof:gupri "https://w3id.org/fdof/fois23-paper/ex2/gufoMetadataTrig"^^xsd:anyURI ;
+
+    :gufoMetadata rdf:type fdof:FAIRMetadataRecord ;
+                    fdof:hasInformationObjectType fdoft:OntologyMetadataRecord ;
+                    fdof:gupri "https://w3id.org/fdof/fois23-paper/ex2#gufoMetadata"^^xsd:anyURI ;
+                    fdof:isMetadataOf <http://purl.org/nemo/gufo> ;
+                    fdof:isMaterializedBy ex2:gufoMetadataTrig .
+
+    :gufoTtlMetadata rdf:type fdof:FAIRMetadataRecord ;
+                        fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
+                        fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#gufoTtlMetadata" ;
+                        fdof:isMetadataOf ex2:gufoTtl ; 
+                        fdof:isMaterializedBy ex2:gufoMetadataTrig .
+
+    :gufoMetadataTrigMetadata rdf:type fdof:FAIRMetadataRecord ;
+                                fdof:hasInformationObjectType fdoft:MediaObjectMetadataRecord ;
+                                fdof:gupri "https://w3id.org/fdof/fois23-paper/ex1#gufoMetadataTrigMetadata" ;
+                                fdof:isMetadataOf ex2:gufoMetadataTrig ; 
+                                fdof:isMaterializedBy ex2:gufoMetadataTrig .
+}
+    
+:gufoMetadata {
+  :gufoMetadata fdof:isMetadataOf <http://purl.org/nemo/gufo> .
+  
+  <http://purl.org/nemo/gufo> rdf:type owl:Ontology, fdof:FAIRInformationObject ;
+                                fdof:hasInformationObjectType fdoft:Ontology ;
+                                fdof:gupri "http://purl.org/nemo/gufo"^^xsd:anyURI ;
+                                dct:identifier "http://purl.org/nemo/gufo"^^xsd:anyURI ;
+                                fdof:isMaterializedBy ex2:gufoTtl ;
+                                dcat:distribution ex2:gufoTtl ;
+                                owl:versionIRI <http://purl.org/nemo/gufo#/1.0.0> ;
+                                owl:versionInfo "1.0.0"@en ;
+                                dct:creator <https://orcid.org/0000-0002-9819-3781> ,
+                                            <https://orcid.org/0000-0002-4408-7553> ,
+                                            <https://orcid.org/0000-0002-3452-553X> ,
+                                            <https://orcid.org/0000-0002-5385-5761> ;
+                                dct:title "gUFO: A Lightweight Implementation of the Unified Foundational Ontology (UFO)"@en ;
+                                dct:bibliographicCitation "J. P. A. Almeida, G. Guizzardi, T. P. Sales, R. A. Falbo, \"gUFO: A Lightweight Implementation of the Unified Foundational Ontology (UFO)\", 2019, http://purl.org/nemo/doc/gufo"@en ;
+                                dct:created "2019-11-11"^^xsd:date ;
+                                dct:modified "2021-11-01"^^xsd:date ;
+                                dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+                                vann:preferredNamespacePrefix "gufo"@en ;
+                                vann:preferredNamespaceUri "http://purl.org/nemo/gufo#"^^xsd:anyURI ;
+}
+
+:gufoTtlMetadata {
+  :gufoTtlMetadata fdof:isMetadataOf ex2:gufoTtl .
+
+  ex2:gufoTtl rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
+                fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/text/turtle> ;
+                dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+                fdof:gupri "https://w3id.org/fdof/fois23-paper/ex2/gufoTtl" ;
+                dct:title "Turtle Distribution of gUFO"@en ;
+                dcat:byteSize "101239"^^xsd:int ;
+                dcat:downloadURL <https://purl.org/nemo/gufo> ;
+}
+
+:gufoMetadataTrigMetadata {
+  :gufoMetadataTrigMetadata fdof:isMetadataOf ex2:gufoMetadataTrig .
+
+  ex2:gufoMetadataTrig rdf:type dcat:Distribution, fdof:FAIRMediaObject ;
+                        fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
+                        dcat:mediaType <https://www.iana.org/assignments/media-types/application/trig> ;
+                        fdof:gupri "https://w3id.org/fdof/fois23-paper/ex2/gufoMetadataTrig" ;
+                        dct:title "TriG Distribution of the Metadata Records Related to gUFO"@en ;
+                        dcat:byteSize "5601"^^xsd:int ;
+                        dcat:downloadURL <https://w3id.org/fdof/fois23-paper/ex2/gufoMetadataTrig> ;
+}
