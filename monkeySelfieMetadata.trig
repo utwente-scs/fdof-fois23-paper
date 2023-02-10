@@ -24,7 +24,7 @@
                         
     :monkeySelfieMetadataTrig rdf:type fdof:FAIRMediaObject ;
                               fdof:hasEncodingFormat <https://www.iana.org/assignments/media-types/application/trig> ;
-                              fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadataTrig"^^xsd:anyURI ;
+                              fdof:gupri "https://w3id.org/fdof/fois23-paper/ex3/monkeySelfieMetadataTrig"^^xsd:anyURI .
 
     :monkeySelfieMetadata rdf:type fdof:FAIRMetadataRecord ;
                           fdof:hasInformationObjectType fdoft:PhotographMetadataRecord ;
@@ -63,7 +63,7 @@
                 schema:name "Macaca nigra self-portrait"@en ;
                 schema:description "Portrait of a female Macaca nigra (Celebes crested macaque) in North Sulawesi, Indonesia, who triggered photographer David Slater's camera"@en ;
                 schema:dateCreated "2011-07-04"^^xsd:date ;
-                schema:creditText "Self-portrait by the depicted Macaca nigra female"@en
+                schema:creditText "Self-portrait by the depicted Macaca nigra female"@en ;
                 schema:license <https://en.wikipedia.org/wiki/Public_domain> ;
 }
 
